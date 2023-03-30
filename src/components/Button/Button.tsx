@@ -9,7 +9,6 @@ import change from '../../assets/icons/change.svg';
 import link from '../../assets/icons/link.svg';
 import styles from './Button.module.scss';
 import blackDownload from '../../assets/icons/black_download.svg';
-// TODO: создать нормальные типы
 interface ButtonProps {
   type: 'big' | 'small' | 'input' | 'round' | 'white';
   img?:

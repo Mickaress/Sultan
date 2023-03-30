@@ -11,7 +11,6 @@ import Button from '../../components/Button/Button';
 import { addCount, lessCount } from '../../store/cartSlice';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-// TODO: правка кнопок
 interface CardProps {}
 
 const Card: FC<CardProps> = () => {

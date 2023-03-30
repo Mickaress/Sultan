@@ -10,8 +10,6 @@ import { useDispatch } from 'react-redux';
 import { setProducts } from './store/productsSlice';
 import { setCart } from './store/cartSlice';
 import productsJson from './models/data.json';
-// TODO: адаптив
-// TODO: форма добавления, удаления и редактирования (придумать как вводить несколько тегов)
 function App() {
   const dispatch = useDispatch();
   const localProducts = localStorage.getItem('products');
