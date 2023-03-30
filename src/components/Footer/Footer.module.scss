@@ -1,0 +1,64 @@
+.Footer {
+  background-color: #3f4e65;
+  margin-top: 100px;
+  @media (max-width: 930px) {
+    display: none;
+  }
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.content {
+  padding: 71px 0 116px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.blocks {
+  display: flex;
+  gap: 98px;
+}
+.block {
+  display: inline-block;
+  vertical-align: top;
+  h1 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 150%;
+    margin: 0;
+    color: white;
+    margin-bottom: 25px;
+  }
+}
+.p16 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  margin: 15px 0 45px;
+  color: white;
+}
+.p14 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: white;
+  margin: 0;
+  margin-bottom: 20px;
+}
+.p12 {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  margin: 0;
+  margin-bottom: 15px;
+  color: white;
+}
+.cards {
+  display: flex;
+  gap: 5px;
+}
+.margin {
+  margin-top: 20px;
+}

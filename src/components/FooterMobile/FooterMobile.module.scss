@@ -1,0 +1,41 @@
+.FooterMobile {
+  background-color: #3f4e65;
+  margin-top: 50px;
+  @media (min-width: 930px) {
+    display: none;
+  }
+}
+.block {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  white-space: nowrap;
+  padding: 15px 0;
+}
+.logo {
+  @media (max-width: 360px) {
+    width: 97px;
+  }
+}
+p {
+  margin: 0;
+  margin-bottom: 15px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #ffffff;
+}
+h1 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  color: #ffffff;
+  margin: 0 0 20px;
+}
+.cards {
+  display: flex;
+  gap: 5px;
+}
+.contact {
+  font-size: 14px;
+}

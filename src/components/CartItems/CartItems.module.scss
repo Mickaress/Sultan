@@ -1,0 +1,114 @@
+.CartItem {
+  .item {
+    border-top: 1px dashed #3f4e65;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .block {
+      gap: 20px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      @media (max-width: 1330px) {
+        margin: 0 auto;
+      }
+      .info {
+        max-width: 500px;
+        .size {
+          display: flex;
+          align-items: center;
+          span {
+            margin-left: 8px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 130%;
+            color: #3f4e65;
+          }
+        }
+        .name {
+          margin: 10px 0;
+          h1 {
+            margin: 0;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 36px;
+            color: #111111;
+          }
+        }
+        .description {
+          p {
+            margin: 0;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 150%;
+            color: #3f4e65;
+          }
+        }
+      }
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      max-width: 503px;
+      width: 100%;
+      justify-content: space-between;
+      @media (max-width: 1330px) {
+        margin: 0 auto;
+      }
+      .counter {
+        button {
+          width: 34px;
+          height: 23px;
+          background: linear-gradient(
+            90deg,
+            rgba(255, 198, 80, 0.3) 0%,
+            rgba(254, 202, 110, 0.3) 97.25%
+          );
+          border-radius: 1000px;
+          border: none;
+          cursor: pointer;
+        }
+        span {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 130%;
+          color: #3f4e65;
+          margin: 0 21px;
+        }
+      }
+      .price {
+        display: flex;
+        align-items: center;
+        p {
+          margin: 0;
+          font-weight: 700;
+          font-size: 30px;
+          line-height: 130%;
+          color: #111111;
+          @media (max-width: 430px) {
+            font-size: 16px;
+          }
+        }
+      }
+      .button {
+        position: relative;
+        cursor: pointer;
+      }
+    }
+    .image {
+      max-width: 280px;
+    }
+  }
+}
+.line {
+  height: 49px;
+  border-left: 1px dashed rgba(63, 78, 101, 0.2);
+  display: block;
+}
+.display_none {
+  @media (max-width: 1330px) {
+    display: none;
+  }
+}

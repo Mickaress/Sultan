@@ -1,0 +1,12 @@
+@import './colors';
+@import './breakpoints';
+@import 'normalize.css';
+
+html {
+  font-family: 'Inter', sans-serif;
+}
+#root {
+  @media (max-width: 930px) {
+    margin-top: 103px;
+  }
+}

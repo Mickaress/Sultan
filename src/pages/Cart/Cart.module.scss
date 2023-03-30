@@ -1,0 +1,49 @@
+.title {
+  padding: 45px 0;
+  @media (max-width: 930px) {
+    padding: 20px 0;
+  }
+  h1 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 120%;
+    color: #111111;
+  }
+}
+.main {
+  border-bottom: 1px dashed #3f4e65;
+}
+.order {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px 0 100px;
+  @media (max-width: 500px) {
+    flex-direction: column;
+    margin: 25px 0 50px;
+  }
+  &_button {
+    cursor: pointer;
+  }
+  .price {
+    margin: 0;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 130%;
+    color: #111111;
+    @media (max-width: 500px) {
+      margin-bottom: 25px;
+    }
+  }
+}
+.adaptiv {
+  @media (min-width: 500px) {
+    display: none;
+  }
+}
+.adaptiv_none {
+  @media (max-width: 500px) {
+    display: none;
+  }
+}

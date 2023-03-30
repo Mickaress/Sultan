@@ -1,0 +1,46 @@
+.NavMobile {
+  position: fixed;
+  top: 103px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+.main {
+  background-color: white;
+}
+.phone {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 150%;
+    text-decoration-line: underline;
+    color: #3f4e65;
+  }
+}
+.content {
+  padding: 20px 0 25px;
+  border-bottom: 1px dashed #3f4e65;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.nav {
+  padding: 25px 0 32px;
+  h1 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 150%;
+    color: #3f4e65;
+    margin-bottom: 25px;
+  }
+  .button {
+    max-width: 290px;
+    margin: 0 auto;
+  }
+}

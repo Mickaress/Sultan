@@ -1,0 +1,126 @@
+.HeaderMobile {
+  position: fixed;
+  background-color: white;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  @media (min-width: 930px) {
+    display: none;
+  }
+}
+.top {
+  border-bottom: 1px solid rgba(63, 78, 101, 0.1);
+  height: 61px;
+  display: flex;
+  align-items: center;
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.logo {
+  width: 97px;
+}
+
+.nav {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--yellow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  user-select: none;
+  input {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    &:checked ~ span {
+      opacity: 1;
+      transform: rotate(45deg) translate(-1.6px, -2px);
+      &:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(45deg) translate(0px, 0px);
+      }
+      &:nth-last-child(2) {
+        opacity: 1;
+        transform: rotate(-45deg) translate(-1px, 3px);
+      }
+    }
+  }
+  span {
+    width: 9px;
+    height: 1px;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+    transform-origin: 5px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+      background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+    &:first-child {
+      transform-origin: 0% 0%;
+    }
+    &:nth-last-child(2) {
+      transform-origin: 0% 100%;
+    }
+  }
+}
+
+.cart {
+  position: relative;
+  span {
+    position: absolute;
+    right: -12px;
+    top: -13px;
+    width: 17px;
+    height: 17px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 12px;
+    color: #ffffff;
+  }
+  img {
+    width: 22px;
+  }
+}
+.bot {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(63, 78, 101, 0.1);
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+.button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 6px;
+  p {
+    margin: 0;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #3f4e65;
+  }
+}
+.half {
+  height: 30px;
+  border-left: 1px dashed rgba(63, 78, 101, 0.1);
+}
