@@ -31,9 +31,9 @@ function App() {
       <Header />
       <HeaderMobile />
       <Routes>
-        <Route path="/" element={<Catalog />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/card/:productId" element={<Card />}></Route>
+        <Route path="/sultan/" element={<Catalog />} />
+        <Route path="/sultan/cart" element={<Cart />} />
+        <Route path="/sultan/card/:productId" element={<Card />}></Route>
       </Routes>
       <Footer />
       <FooterMobile />

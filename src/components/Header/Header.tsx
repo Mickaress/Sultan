@@ -34,10 +34,10 @@ const Header = () => {
       <div className={styles.bot}>
         <Container>
           <div className={styles.content}>
-            <NavLink to="/">
+            <NavLink to="/sultan/">
               <img src={logo} alt="" />
             </NavLink>
-            <NavLink className={styles.link} to="/">
+            <NavLink className={styles.link} to="/sultan/">
               <Button text="Каталог" type="big" img="blocks" />
             </NavLink>
             <Input img="search" text="Поиск..." />
@@ -46,7 +46,7 @@ const Header = () => {
               <Button text="Прайс-лист" type="big" img="download" />
             </div>
             <div className={styles.cart}>
-              <NavLink className={styles.link} to="/Cart">
+              <NavLink className={styles.link} to="/sultan/Cart">
                 <div className={styles.cart_img}>
                   <img src={cart} alt="" />
                   <span>{cartCount}</span>

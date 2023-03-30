@@ -30,7 +30,7 @@ const HeaderMobile: FC<HeaderMobileProps> = () => {
               <span></span>
             </div>
             <img className={styles.logo} src={logo} alt="" />
-            <NavLink className={styles.cart} to="/Cart">
+            <NavLink className={styles.cart} to="/sultan/Cart">
               <img src={cart} alt="" />
               <span>{cartCount}</span>
             </NavLink>
@@ -40,12 +40,12 @@ const HeaderMobile: FC<HeaderMobileProps> = () => {
       <div className={styles.bot}>
         <Container>
           <div className={styles.flex}>
-            <NavLink className={styles.button} to="/">
+            <NavLink className={styles.button} to="/sultan/">
               <img src={blocks} alt="" />
               <p>Каталог</p>
             </NavLink>
             <div className={styles.half}></div>
-            <NavLink className={styles.button} to="/">
+            <NavLink className={styles.button} to="/sultan/">
               <img src={search} alt="" />
               <p>Поиск</p>
             </NavLink>

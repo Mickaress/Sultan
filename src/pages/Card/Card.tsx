@@ -42,7 +42,7 @@ const Card: FC<CardProps> = () => {
   return (
     <Container>
       <div className={styles.links}>
-        <NavLink to="/">
+        <NavLink to="/sultan/">
           <p className={styles.catalog}>Каталог</p>
         </NavLink>
         <p className={styles.name}>{product?.name}</p>

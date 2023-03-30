@@ -53,7 +53,7 @@ const ProductListItem: FC<ProductListItemProps> = ({ product }) => {
             {product.size} {product.type_size}
           </span>
         </div>
-        <NavLink to={'/card/' + String(product.url)}>
+        <NavLink to={'/sultan/card/' + String(product.url)}>
           <h1>{product.name}</h1>
         </NavLink>
         <div className={styles.info}>
