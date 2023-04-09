@@ -10,21 +10,17 @@ interface BrandFilterProps {}
 const BrandFilter: FC<BrandFilterProps> = () => {
   const dispatch = useDispatch();
   const products = useSelector((state: RootState) => state.products.products);
-  const [showAllBrands, setShowAllBrands] = useState(false);
   const [searchBrand, setSearchBrand] = useState('');
-  const [checkedBrands, setCheckedBrands] = useState<string[]>([]);
   const brands = [...new Set(products.map((product) => product.brand))]
     .filter((brand) => brand.toLowerCase().startsWith(searchBrand.toLowerCase()))
     .sort((a, b) => a.localeCompare(b));
+  const checkedBrands = useSelector((state: RootState) => state.brands.brands);
+  const [showAllBrands, setShowAllBrands] = useState(false);
   const handleBrandChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
-    let newCheckedBrands;
-    if (event.target.checked) {
-      newCheckedBrands = [...checkedBrands, value];
-    } else {
-      newCheckedBrands = checkedBrands.filter((brand) => brand !== value);
-    }
-    await setCheckedBrands(newCheckedBrands);
+    let newCheckedBrands = event.target.checked
+      ? [...checkedBrands, value]
+      : checkedBrands.filter((brand) => brand !== value);
     dispatch(setBrands(newCheckedBrands));
   };
   function getBrand() {
