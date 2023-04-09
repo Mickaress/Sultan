@@ -1,0 +1,37 @@
+.BrandFilter {
+  .button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--grey);
+    margin-top: 10px;
+  }
+  h2 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--black);
+  }
+  .checkbox {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+      input {
+        margin-right: 10px;
+      }
+      span {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: var(--grey);
+      }
+    }
+  }
+}

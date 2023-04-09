@@ -5,38 +5,31 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import styles from './Card.module.scss';
 import { NavLink } from 'react-router-dom';
-import ml from '../../assets/icons/ml.svg';
-import gr from '../../assets/icons/gr.svg';
 import Button from '../../components/Button/Button';
-import { addCount, lessCount } from '../../store/cartSlice';
+import { addAny } from '../../store/cartSlice';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import SizeInfo from '../../components/SizeInfo/SizeInfo';
 interface CardProps {}
 
 const Card: FC<CardProps> = () => {
+  const dispatch = useDispatch();
   const [showDescription, setShowDescription] = useState(false);
+  const [count, setCount] = useState(0);
   const { productId } = useParams<{ productId: string }>();
   const product = useSelector((state: RootState) =>
     state.products.products.find((p) => p.url === Number(productId)),
   );
-  const item = useSelector((state: RootState) =>
-    state.cart.items.find((p) => p.product.id === product?.id),
-  );
-  const count = item?.count || 0;
-  function image(type_size: string | undefined) {
-    switch (type_size) {
-      case 'g':
-        return <img src={gr} alt="" />;
-      case 'ml':
-        return <img src={ml} alt="" />;
+  const handleAddToCart = () => {
+    if (product && count > 0) {
+      dispatch(
+        addAny({
+          product: product,
+          num: count,
+        }),
+      );
+      setCount(0);
     }
-  }
-  const dispatch = useDispatch();
-  const handleAddCount = () => {
-    if (product) dispatch(addCount(product));
-  };
-  const handleLessCount = () => {
-    if (product) dispatch(lessCount(product));
   };
   return (
     <Container>
@@ -53,26 +46,26 @@ const Card: FC<CardProps> = () => {
         <div className={styles.info}>
           <p className={styles.green}>В наличии</p>
           <h1>{product?.name}</h1>
-          <div className={styles.size}>
-            {image(product?.type_size)}
-            <span>
-              {product?.size} {product?.type_size}
-            </span>
-          </div>
+          <SizeInfo size={product?.size} typeSize={product?.type_size} />
           <div className={styles.cart}>
             <p className={styles.price}>{product?.price} ₸</p>
             <div className={styles.counter}>
-              <button onClick={handleLessCount}>-</button>
+              <Button
+                disabled={count === 0 ? true : false}
+                text="-"
+                type="counter"
+                onClick={() => setCount(count - 1)}
+              />
               <span>{count}</span>
-              <button onClick={handleAddCount}>+</button>
+              <Button text="+" type="counter" onClick={() => setCount(count + 1)} />
             </div>
-            <div onClick={handleAddCount} className={styles.display}>
+            <div onClick={handleAddToCart} className={styles.display}>
               <Button text="В корзину" img="cart" type="small" />
             </div>
           </div>
           <div className={styles.buttons}>
             <div className={styles.adaptiv}>
-              <div onClick={handleAddCount} className={styles.display_none}>
+              <div onClick={handleAddToCart} className={styles.display_none}>
                 <Button text="В корзину" img="cart" type="small" />
               </div>
               <Button type="white" img="link" />

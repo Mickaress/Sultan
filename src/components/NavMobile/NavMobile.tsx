@@ -8,29 +8,32 @@ import Button from '../Button/Button';
 
 interface NavMobileProps {
   showNav: boolean;
-  handleClose: () => void;
 }
 
-const NavMobile: FC<NavMobileProps> = ({ showNav, handleClose }) => {
+const NavMobile: FC<NavMobileProps> = ({ showNav }) => {
   if (!showNav) {
     return null;
   }
   return (
-    <div className={styles.NavMobile}>
+    <div className={styles.NavMobile} data-testid="nav-mobile">
       <div className={styles.main}>
         <Container>
           <div className={styles.content}>
             <InformationBlock
               img="location"
-              h1="г. Кокчетав, ул. Ж. Ташенова 129Б"
-              p="(Рынок Восточный)"
+              header="г. Кокчетав, ул. Ж. Ташенова 129Б"
+              mainText="(Рынок Восточный)"
             />
-            <InformationBlock img="mail" h1="opt.sultan@mail.ru" p="На связи в любое время" />
+            <InformationBlock
+              img="mail"
+              header="opt.sultan@mail.ru"
+              mainText="На связи в любое время"
+            />
             <InformationBlock
               img="phone"
-              h1="Отдел продаж"
-              p="+7 (777) 490-00-91"
-              p2="время работы: 9:00-20:00"
+              header="Отдел продаж"
+              mainText="+7 (777) 490-00-91"
+              additionalText="время работы: 9:00-20:00"
             />
             <div className={styles.phone}>
               <img src={phone} alt="" />

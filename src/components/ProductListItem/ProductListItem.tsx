@@ -1,6 +1,4 @@
 import { FC } from 'react';
-import ml from '../../assets/icons/ml.svg';
-import gr from '../../assets/icons/gr.svg';
 import Button from '../Button/Button';
 import styles from './ProductListItem.module.scss';
 import { Product } from '../../types/types';
@@ -10,18 +8,10 @@ import { NavLink } from 'react-router-dom';
 import { deleteProduct } from '../../store/productsSlice';
 import { useState } from 'react';
 import ChangeProductsModal from '../changeProductsModal/changeProductsModal';
+import SizeInfo from '../SizeInfo/SizeInfo';
 
 interface ProductListItemProps {
   product: Product;
-}
-
-function image(type_size: string) {
-  switch (type_size) {
-    case 'g':
-      return <img src={gr} alt="" />;
-    case 'ml':
-      return <img src={ml} alt="" />;
-  }
 }
 
 const ProductListItem: FC<ProductListItemProps> = ({ product }) => {
@@ -46,14 +36,9 @@ const ProductListItem: FC<ProductListItemProps> = ({ product }) => {
         </div>
       </div>
       <div>
-        <img className={styles.image} src={product.img}></img>
-        <div className={styles.size}>
-          {image(product.type_size)}
-          <span>
-            {product.size} {product.type_size}
-          </span>
-        </div>
-        <NavLink to={'/sultan/card/' + String(product.url)}>
+        <img className={styles.image} src={product.img} />
+        <SizeInfo size={product.size} typeSize={product.type_size} />
+        <NavLink className={styles.link} to={'/sultan/card/' + String(product.url)}>
           <h1>{product.name}</h1>
         </NavLink>
         <div className={styles.info}>
@@ -70,9 +55,7 @@ const ProductListItem: FC<ProductListItemProps> = ({ product }) => {
       </div>
       <div className={styles.price}>
         <p className={styles.count}>{product.price} ₸</p>
-        <div className={styles.button} onClick={handleAddCount}>
-          <Button text="В КОРЗИНУ" img="cart" type="small" />
-        </div>
+        <Button text="В КОРЗИНУ" img="cart" type="small" onClick={handleAddCount} />
       </div>
       {showModal && (
         <ChangeProductsModal showModal={showModal} handleClose={handleClose} product={product} />

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import styles from './FooterMobile.module.scss';
 import Container from '../Container/Container';
 import logo from '../../assets/icons/logo_white.svg';
@@ -25,7 +25,7 @@ const FooterMobile: FC<FooterMobileProps> = () => (
         Акмолинской области
       </p>
       <p className={styles.p12}>Подпишись на скидки и акции</p>
-      <Input img="arrow" text="Введите ваш E-mail" />
+      <Input image="arrow" text="Введите ваш E-mail" />
       <div className={styles.block}>
         <div>
           <h1>Меню сайта:</h1>
@@ -49,7 +49,7 @@ const FooterMobile: FC<FooterMobileProps> = () => (
       <div className={styles.block}>
         <div>
           <Contact />
-          <InformationBlock h1="opt.sultan@mail.ru " p="На связи в любое время" />
+          <InformationBlock header="opt.sultan@mail.ru " mainText="На связи в любое время" />
           <div className={styles.cards}>
             <img src={visa} alt="" />
             <img src={master} alt="" />

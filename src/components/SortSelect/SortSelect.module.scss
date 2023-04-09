@@ -1,0 +1,29 @@
+.SortList {
+  @media (max-width: 930px) {
+    display: none;
+  }
+  display: flex;
+  p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--black);
+  }
+  select {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--grey);
+    border: none;
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}
+.mobile {
+  display: none;
+  @media (max-width: 930px) {
+    display: flex;
+  }
+}

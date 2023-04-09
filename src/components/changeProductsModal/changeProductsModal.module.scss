@@ -14,12 +14,14 @@
     background-color: white;
     border-radius: 8px;
     position: relative;
-    max-width: 735px;
-    width: 100%;
-    @media (max-width: 520px) {
-      max-height: 400px;
+    max-height: 1041px;
+    @media (max-height: 1200px) {
+      max-height: 70vh;
       overflow-y: scroll;
     }
+    max-height: 1041px;
+    max-width: 735px;
+    width: 100%;
     .close {
       position: absolute;
       cursor: pointer;
@@ -36,7 +38,7 @@
         font-weight: 700;
         font-size: 16px;
         line-height: 150%;
-        color: #111111;
+        color: var(--black);
       }
       button {
         box-sizing: border-box;

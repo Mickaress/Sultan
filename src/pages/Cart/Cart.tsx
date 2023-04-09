@@ -27,18 +27,24 @@ const Cart: FC<CartProps> = () => {
         <div className={styles.title}>
           <h1>Корзина</h1>
         </div>
-        <div className={styles.main}>
-          {items.map((item) => (
-            <CartItems key={item.id} item={item} />
-          ))}
-        </div>
-        <div className={styles.order}>
-          <p className={`${styles.price} ${styles.adaptiv}`}>{price} ₸</p>
-          <div className={styles.order_button} onClick={order}>
-            <Button type="big" text="Оформить заказ" />
-          </div>
-          <p className={`${styles.price} ${styles.adaptiv_none}`}>{price} ₸</p>
-        </div>
+        {items.length === 0 ? (
+          <h1 className={styles.empty}>Корзина пуста!</h1>
+        ) : (
+          <>
+            <div className={styles.main}>
+              {items.map((item) => (
+                <CartItems key={item.id} item={item} />
+              ))}
+            </div>
+            <div className={styles.order}>
+              <p className={`${styles.price} ${styles.adaptiv}`}>{price} ₸</p>
+              <div className={styles.order_button} onClick={order}>
+                <Button type="big" text="Оформить заказ" />
+              </div>
+              <p className={`${styles.price} ${styles.adaptiv_none}`}>{price} ₸</p>
+            </div>
+          </>
+        )}
       </Container>
       {showModal && <Modal showModal={showModal} handleClose={handleClose} />}
     </>

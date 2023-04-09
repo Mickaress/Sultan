@@ -1,5 +1,5 @@
 .FooterMobile {
-  background-color: #3f4e65;
+  background-color: var(--grey);
   margin-top: 50px;
   @media (min-width: 930px) {
     display: none;

@@ -4,19 +4,11 @@
   justify-content: space-around;
 }
 .add {
-  border: none;
-  background-color: var(--yellow);
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 17px;
-  color: white;
-  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
 }
 .pagination {
-  margin-top: 50px;
   display: flex;
   justify-content: center;
   button {
@@ -45,7 +37,7 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 130%;
-    color: #3f4e65;
+    color: var(--grey);
     padding: 8.5px 14px;
     border-radius: 50%;
   }

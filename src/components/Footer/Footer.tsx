@@ -26,7 +26,7 @@ const Footer: FC<FooterProps> = () => (
             "под ключ" в Кокчетаве и Акмолинской <br /> области
           </p>
           <p className={styles.p12}>Подпишись на скидки и акции</p>
-          <Input img="arrow" text="Введите ваш E-mail" />
+          <Input image="arrow" text="Введите ваш E-mail" />
         </div>
         <div className={styles.blocks}>
           <div className={styles.block}>
@@ -58,7 +58,7 @@ const Footer: FC<FooterProps> = () => (
           <div className={styles.block}>
             <h1>Контакты:</h1>
             <Contact />
-            <InformationBlock h1="opt.sultan@mail.ru " p="На связи в любое время" />
+            <InformationBlock header="opt.sultan@mail.ru " mainText="На связи в любое время" />
             <div className={styles.cards}>
               <img src={visa} alt="" />
               <img src={master} alt="" />

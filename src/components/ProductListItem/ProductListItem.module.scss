@@ -27,23 +27,12 @@
     width: 100%;
     object-fit: scale-down;
   }
-  .size {
-    display: flex;
-    align-items: center;
-    span {
-      margin-left: 8px;
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 130%;
-      color: #3f4e65;
-    }
-  }
   h1 {
     margin: 10px 0 20px;
     font-weight: 500;
     font-size: 16px;
     line-height: 130%;
-    color: #111111;
+    color: var(--black);
     text-align: left;
   }
   .info {
@@ -54,13 +43,13 @@
       font-weight: 300;
       font-size: 14px;
       line-height: 150%;
-      color: #3f4e65;
+      color: var(--grey);
     }
     span {
       font-weight: 500;
       font-size: 14px;
       line-height: 150%;
-      color: #111111;
+      color: var(--black);
     }
   }
   .price {
@@ -70,11 +59,17 @@
       font-weight: 800;
       font-size: 16px;
       line-height: 130%;
-      color: #111111;
+      color: var(--black);
     }
     .button {
       height: auto;
       cursor: pointer;
     }
+  }
+}
+.link {
+  text-decoration: none;
+  :hover {
+    text-decoration: underline black;
   }
 }

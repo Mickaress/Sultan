@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, MouseEventHandler } from 'react';
 import blocks from '../../assets/icons/blocks.svg';
 import del from '../../assets/icons/delete.svg';
 import download from '../../assets/icons/download.svg';
@@ -9,8 +9,20 @@ import change from '../../assets/icons/change.svg';
 import link from '../../assets/icons/link.svg';
 import styles from './Button.module.scss';
 import blackDownload from '../../assets/icons/black_download.svg';
+import clsx from 'clsx';
+const images = {
+  blocks: blocks,
+  delete: del,
+  download: download,
+  cart: cart,
+  search: search,
+  arrow: arrow,
+  change: change,
+  link: link,
+  blackDownload: blackDownload,
+};
 interface ButtonProps {
-  type: 'big' | 'small' | 'input' | 'round' | 'white';
+  type: 'big' | 'small' | 'input' | 'round' | 'white' | 'counter';
   img?:
     | 'blocks'
     | 'download'
@@ -22,93 +34,28 @@ interface ButtonProps {
     | 'link'
     | 'blackDownload';
   text?: string;
-}
-function getImage(
-  img:
-    | 'blocks'
-    | 'download'
-    | 'cart'
-    | 'delete'
-    | 'arrow'
-    | 'search'
-    | 'change'
-    | 'link'
-    | 'blackDownload'
-    | undefined,
-) {
-  switch (img) {
-    case 'blocks':
-      return blocks;
-    case 'download':
-      return download;
-    case 'cart':
-      return cart;
-    case 'delete':
-      return del;
-    case 'arrow':
-      return arrow;
-    case 'search':
-      return search;
-    case 'change':
-      return change;
-    case 'link':
-      return link;
-    case 'blackDownload':
-      return blackDownload;
-  }
-}
-function getButton(
-  type: 'big' | 'small' | 'input' | 'round' | 'white',
-  text: string | undefined,
-  img:
-    | 'blocks'
-    | 'download'
-    | 'cart'
-    | 'delete'
-    | 'arrow'
-    | 'search'
-    | 'change'
-    | 'link'
-    | 'blackDownload'
-    | undefined,
-) {
-  switch (type) {
-    case 'big':
-      return (
-        <div className={`${styles.big} ${styles.Button}`}>
-          <p>{text}</p>
-          {img ? <img src={getImage(img)}></img> : ''}
-        </div>
-      );
-    case 'small':
-      return (
-        <div className={`${styles.small} ${styles.Button}`}>
-          <p>{text}</p>
-          <img src={getImage(img)}></img>
-        </div>
-      );
-    case 'input':
-      return (
-        <div className={`${styles.input} ${styles.Button}`}>
-          <img src={getImage(img)}></img>
-        </div>
-      );
-    case 'round':
-      return (
-        <div className={`${styles.round} ${styles.Button}`}>
-          <img src={getImage(img)}></img>
-        </div>
-      );
-    case 'white':
-      return (
-        <div className={`${styles.Button} ${styles.white}`}>
-          {text ? <p>{text}</p> : ''}
-          {img ? <img src={getImage(img)}></img> : ''}
-        </div>
-      );
-  }
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+  disabled?: boolean;
 }
 
-const Button: FC<ButtonProps> = ({ type, text, img }) => <>{getButton(type, text, img)}</>;
+const Button: FC<ButtonProps> = ({ type, text, img, onClick, disabled }) => {
+  return (
+    <button
+      disabled={disabled}
+      onClick={onClick}
+      className={clsx(styles.Button, {
+        [styles.small]: type === 'small',
+        [styles.round]: type === 'round',
+        [styles.white]: type === 'white',
+        [styles.input]: type === 'input',
+        [styles.big]: type === 'big',
+        [styles.counter]: type === 'counter',
+      })}
+    >
+      {text && <p>{text}</p>}
+      {img && <img src={images[img]} alt={img} />}
+    </button>
+  );
+};
 
 export default Button;

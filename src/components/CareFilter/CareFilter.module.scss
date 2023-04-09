@@ -1,0 +1,49 @@
+.CareFilter {
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 930px) {
+    display: none;
+  }
+  .item {
+    cursor: pointer;
+    user-select: none;
+    background-color: white;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 0;
+    margin: 25px 0;
+    box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 17px;
+    color: var(--grey);
+    text-align: center;
+  }
+  .active {
+    background-color: var(--yellow);
+  }
+}
+.CareFilterSidebar {
+  h2 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--black);
+  }
+  .item {
+    font-weight: 400;
+    font-size: 14px;
+    user-select: none;
+    line-height: 150%;
+    color: var(--grey);
+    margin: 0;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  .active {
+    text-decoration: underline;
+  }
+}

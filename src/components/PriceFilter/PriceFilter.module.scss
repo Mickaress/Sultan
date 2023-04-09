@@ -1,0 +1,40 @@
+.PriceFilter {
+  p {
+    margin: 0;
+    margin-bottom: 16px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--grey);
+  }
+  .select {
+    display: flex;
+    input {
+      width: 100px;
+      border: none;
+      outline: none;
+      padding: 4px 14px;
+      text-align: center;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 198, 80, 0.3) 0%,
+        rgba(254, 202, 110, 0.3) 97.25%
+      );
+      border-radius: 1000px;
+      &::-webkit-inner-spin-button {
+        position: absolute;
+        width: 12.5%;
+        height: 100%;
+        top: 0;
+        right: 0;
+      }
+    }
+    span {
+      margin: 0 10px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      color: var(--grey);
+    }
+  }
+}

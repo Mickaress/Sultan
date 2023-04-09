@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { addProduct } from '../../store/productsSlice';
 import { updateProduct } from '../../store/productsSlice';
+import { cares } from '../../models/care';
 
 interface ChangeProductsModalProps {
   showModal: boolean;
@@ -21,19 +22,6 @@ const ChangeProductsModal: FC<ChangeProductsModalProps> = ({ showModal, handleCl
   if (!showModal) {
     return null;
   }
-  const cares = [
-    'Уход за телом',
-    'Уход за руками',
-    'Уход за ногами',
-    'Уход за лицом',
-    'Уход за волосами',
-    'Средства для загара',
-    'Средства для бритья',
-    'Подарочные наборы',
-    'Гигиеническая продукция',
-    'Гигиена полости рта',
-    'Бумажная продукция',
-  ];
   const handleSubmit = () => {
     const productObj = {
       id: product ? product.id : id + 1,

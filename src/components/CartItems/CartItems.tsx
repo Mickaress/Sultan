@@ -1,11 +1,10 @@
 import { FC } from 'react';
 import styles from './CartItems.module.scss';
 import Button from '../Button/Button';
-import ml from '../../assets/icons/ml.svg';
-import gr from '../../assets/icons/gr.svg';
 import { CartItem } from '../../types/types';
 import { addCount, lessCount, removeItem } from '../../store/cartSlice';
 import { useDispatch } from 'react-redux';
+import SizeInfo from '../SizeInfo/SizeInfo';
 
 interface CartItemProps {
   item: CartItem;
@@ -28,12 +27,7 @@ const CartItems: FC<CartItemProps> = ({ item }) => {
         <div className={styles.block}>
           <img className={styles.image} src={item.product.img} alt="" />
           <div className={styles.info}>
-            <div className={styles.size}>
-              <img src={item.product.type_size === 'g' ? gr : ml} alt="" />
-              <span>
-                {item.product.size} {item.product.type_size}
-              </span>
-            </div>
+            <SizeInfo size={item.product.size} typeSize={item.product.type_size} />
             <div className={styles.name}>
               <h1>{item.product.name}</h1>
             </div>
@@ -45,17 +39,17 @@ const CartItems: FC<CartItemProps> = ({ item }) => {
         <div className={styles.right}>
           <div className={`${styles.line} ${styles.display_none}`}></div>
           <div className={styles.counter}>
-            <button onClick={handleLessCount}>-</button>
+            <Button text="-" type="counter" onClick={handleLessCount} />
             <span>{item.count}</span>
-            <button onClick={handleAddCount}>+</button>
+            <Button text="+" type="counter" onClick={handleAddCount} />
           </div>
           <div className={styles.line}></div>
           <div className={styles.price}>
             <p>{item.product.price * item.count} ₸</p>
           </div>
           <div className={styles.line}></div>
-          <div onClick={handleRemoveItem} className={styles.button}>
-            <Button img="delete" type="round" />
+          <div className={styles.button}>
+            <Button img="delete" type="round" onClick={handleRemoveItem} />
           </div>
         </div>
       </div>

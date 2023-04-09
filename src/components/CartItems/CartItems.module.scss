@@ -1,6 +1,6 @@
 .CartItem {
   .item {
-    border-top: 1px dashed #3f4e65;
+    border-top: 1px dashed var(--grey);
     padding: 50px 0;
     display: flex;
     justify-content: space-between;
@@ -16,17 +16,6 @@
       }
       .info {
         max-width: 500px;
-        .size {
-          display: flex;
-          align-items: center;
-          span {
-            margin-left: 8px;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 130%;
-            color: #3f4e65;
-          }
-        }
         .name {
           margin: 10px 0;
           h1 {
@@ -34,7 +23,7 @@
             font-weight: 700;
             font-size: 30px;
             line-height: 36px;
-            color: #111111;
+            color: var(--black);
           }
         }
         .description {
@@ -43,7 +32,7 @@
             font-weight: 300;
             font-size: 12px;
             line-height: 150%;
-            color: #3f4e65;
+            color: var(--grey);
           }
         }
       }
@@ -74,7 +63,7 @@
           font-weight: 500;
           font-size: 14px;
           line-height: 130%;
-          color: #3f4e65;
+          color: var(--grey);
           margin: 0 21px;
         }
       }
@@ -86,7 +75,7 @@
           font-weight: 700;
           font-size: 30px;
           line-height: 130%;
-          color: #111111;
+          color: var(--black);
           @media (max-width: 430px) {
             font-size: 16px;
           }

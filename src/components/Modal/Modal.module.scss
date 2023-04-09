@@ -42,7 +42,7 @@
         font-size: 40px;
         line-height: 120%;
         text-transform: uppercase;
-        color: #111111;
+        color: var(--black);
         text-align: center;
       }
       p {
@@ -50,7 +50,7 @@
         font-weight: 300;
         font-size: 20px;
         line-height: 120%;
-        color: #3f4e65;
+        color: var(--grey);
         text-align: center;
       }
     }

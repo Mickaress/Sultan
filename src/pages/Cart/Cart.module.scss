@@ -8,11 +8,11 @@
     font-weight: 500;
     font-size: 40px;
     line-height: 120%;
-    color: #111111;
+    color: var(--black);
   }
 }
 .main {
-  border-bottom: 1px dashed #3f4e65;
+  border-bottom: 1px dashed var(--grey);
 }
 .order {
   display: flex;
@@ -31,7 +31,7 @@
     font-weight: 700;
     font-size: 30px;
     line-height: 130%;
-    color: #111111;
+    color: var(--black);
     @media (max-width: 500px) {
       margin-bottom: 25px;
     }
@@ -46,4 +46,12 @@
   @media (max-width: 500px) {
     display: none;
   }
+}
+.empty {
+  margin: 0;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 120%;
+  color: var(--black);
+  text-align: center;
 }

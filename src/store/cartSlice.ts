@@ -21,6 +21,24 @@ const cartSlice = createSlice({
       state.price = 0;
       localStorage.removeItem('cart');
     },
+    addAny: (state, action: PayloadAction<{ product: Product; num: number }>) => {
+      const { product, num } = action.payload;
+      if (num !== 0) {
+        const existingItem = state.items.find((item) => item.product.id === product.id);
+        if (existingItem) {
+          existingItem.count += num;
+        } else {
+          state.items.push({
+            id: state.items.length > 0 ? state.items[state.items.length - 1].id + 1 : 1,
+            product: product,
+            count: num,
+          });
+        }
+        state.count += num;
+        state.price += product.price * num;
+        localStorage.setItem('cart', JSON.stringify(state));
+      }
+    },
     addCount: (state, action: PayloadAction<Product>) => {
       const existingItem = state.items.find((item) => item.product.id === action.payload.id);
       if (existingItem) {
@@ -69,6 +87,6 @@ const cartSlice = createSlice({
   },
 });
 
-export const { setCart, addCount, lessCount, removeItem, clearCart } = cartSlice.actions;
+export const { setCart, addCount, addAny, lessCount, removeItem, clearCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

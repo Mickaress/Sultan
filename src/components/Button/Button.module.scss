@@ -4,6 +4,7 @@
   background-color: var(--yellow);
   border-radius: 79px;
   align-items: center;
+  border: none;
 }
 .big {
   padding: 21px 54px;
@@ -62,7 +63,20 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 150%;
-    color: #3f4e65;
+    color: var(--grey);
     text-align: center;
+  }
+}
+.counter {
+  width: 34px;
+  height: 23px;
+  background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+  border-radius: 1000px;
+  p {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    color: var(--grey);
+    margin: 0;
   }
 }

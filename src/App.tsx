@@ -6,24 +6,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Card from './pages/Card/Card';
 import Cart from './pages/Cart/Cart';
 import Catalog from './pages/Catalog/Catalog';
-import { useDispatch } from 'react-redux';
-import { setProducts } from './store/productsSlice';
-import { setCart } from './store/cartSlice';
-import productsJson from './models/data.json';
+import { getDataFromLocalStorage } from './hooks/useStorage';
 function App() {
-  const dispatch = useDispatch();
-  const localProducts = localStorage.getItem('products');
-  if (localProducts && localProducts?.length !== 0) {
-    dispatch(setProducts(JSON.parse(String(localProducts))));
-  } else {
-    const productsJSON = JSON.parse(JSON.stringify(productsJson));
-    localStorage.setItem('products', JSON.stringify(productsJSON));
-    dispatch(setProducts(productsJSON));
-  }
-  const localCart = localStorage.getItem('cart');
-  if (localCart) {
-    dispatch(setCart(JSON.parse(localCart)));
-  }
+  getDataFromLocalStorage();
   return (
     <BrowserRouter>
       <Header />
